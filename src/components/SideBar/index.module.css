@@ -1,0 +1,40 @@
+.container {
+  min-width: 196px;
+  height: 500px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.colorsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.genderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.priceContainer,
+.typeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.name {
+  margin: 0px;
+  font-weight: bold;
+}
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

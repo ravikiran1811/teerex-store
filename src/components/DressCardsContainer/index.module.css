@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.totalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

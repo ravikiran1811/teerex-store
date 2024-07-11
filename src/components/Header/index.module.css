@@ -1,0 +1,41 @@
+.basketContainer {
+  display: flex;
+  gap: 20px;
+}
+.container {
+  padding: 10px 20px 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: gray;
+}
+p {
+  margin: 0px;
+}
+.basket {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.cart {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+.name {
+  color: #ffffff;
+}
+.products {
+  border-bottom: 2px solid black;
+}
+.count {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background-color: black;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

@@ -1,17 +1,41 @@
-import React from "react";
-import styles from './index.module.css'
+import React, { useState } from "react";
+import styles from "./index.module.css";
 interface DressCardProps {
   image: string;
   price: number;
+  name: string;
+  count: number;
+  id: number;
+  quantity: number;
+  handleInc: (id: number) => void;
+  handleDec: (id: number) => void;
 }
 
-const DressCard: React.FC<DressCardProps> = ({ image, price }) => {
+const DressCard: React.FC<DressCardProps> = ({
+  image,
+  price,
+  name,
+  count,
+  id,
+  handleInc,
+  handleDec,
+}) => {
   return (
     <div className={styles.container}>
       <img className={styles.image} src={image} alt="Dress" />
-      <div>
+      <p className={styles.name}>{name}</p>
+      <div className={styles.lowercontainer}>
         <p>Rs: {price}</p>
-        <button>Add To Cart</button>
+        {/* <button className={styles.button}>Add To Cart</button> */}
+        <div>
+          <button onClick={() => handleInc(id)} className={styles.button}>
+            +
+          </button>
+          <span>{count}</span>
+          <button onClick={() => handleDec(id)} className={styles.button}>
+            -
+          </button>
+        </div>
       </div>
     </div>
   );

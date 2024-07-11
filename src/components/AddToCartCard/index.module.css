@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.image {
+  width: 100px;
+  height: 100px;
+}
