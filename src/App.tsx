@@ -18,6 +18,7 @@ function App() {
         const dataWithCount = response.data.map((item: any, index: number) => ({
           ...item,
           count: 0,
+          warning: "",
         }));
         setData(dataWithCount);
         setFilteredData(dataWithCount);
@@ -56,15 +57,26 @@ function App() {
     return false;
   };
   const handleInc = (id: number) => {
-    const updatedData = data.map((item) =>
-      item.id === id ? { ...item, count: item.count + 1 } : item
-    );
+    const updatedData = data.map((item) => {
+      if (item.id === id) {
+        if (item.quantity > item.count) {
+          return { ...item, count: item.count + 1 };
+        } else {
+          item.warning = "Quantity limited to " + item.quantity;
+        }
+      }
+      return item;
+    });
     setData(updatedData);
   };
   const handleDec = (id: number) => {
-    const updatedData = data.map((item) =>
-      item.id === id ? { ...item, count: item.count - 1 } : item
-    );
+    const updatedData = data.map((item) => {
+      if (item.id === id && item.count > 0) {
+        return { ...item, count: item.count - 1, warning: "" };
+      } else {
+        return item;
+      }
+    });
     setData(updatedData);
   };
   useEffect(() => {

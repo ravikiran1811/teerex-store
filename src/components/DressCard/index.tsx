@@ -9,6 +9,7 @@ interface DressCardProps {
   quantity: number;
   handleInc: (id: number) => void;
   handleDec: (id: number) => void;
+  warning: string;
 }
 
 const DressCard: React.FC<DressCardProps> = ({
@@ -19,14 +20,16 @@ const DressCard: React.FC<DressCardProps> = ({
   id,
   handleInc,
   handleDec,
+  warning,
 }) => {
   return (
     <div className={styles.container}>
+      {warning.length > 0 && <p className={styles.warning}>{warning}</p>}
+
       <img className={styles.image} src={image} alt="Dress" />
       <p className={styles.name}>{name}</p>
       <div className={styles.lowercontainer}>
         <p>Rs: {price}</p>
-        {/* <button className={styles.button}>Add To Cart</button> */}
         <div>
           <button onClick={() => handleInc(id)} className={styles.button}>
             +

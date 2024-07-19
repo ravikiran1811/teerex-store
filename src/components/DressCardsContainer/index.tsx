@@ -9,6 +9,7 @@ interface DressCardProps {
   count: number;
   id: number;
   quantity: number;
+  warning: string;
 }
 
 interface DressCardsContainerProps {
@@ -28,7 +29,7 @@ const DressCardsContainer: React.FC<DressCardsContainerProps> = ({
       <TextField
         onChange={handleChange}
         id="standard-basic"
-        label="Standard"
+        label="Search"
         variant="standard"
       />
       <div className={styles.container}>
@@ -43,6 +44,7 @@ const DressCardsContainer: React.FC<DressCardsContainerProps> = ({
             quantity={dress.quantity}
             handleInc={handleInc}
             handleDec={handleDec}
+            warning={dress.warning}
           />
         ))}
       </div>
